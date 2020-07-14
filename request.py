@@ -168,7 +168,7 @@ else:
             thickness , font, text_add = font_size(width)
             x1_text = x1 + text_add
             y2_text = y2
-            fnt = ImageFont.truetype('Arial.ttf', font)
+            fnt = ImageFont.truetype('models/Arial.ttf', font)
             title = ImageDraw.Draw(image)
             title.text((x1_text,y2_text), text, font=fnt, fill=color)
     image.save('final.jpg')
