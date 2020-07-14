@@ -22,11 +22,11 @@ import joblib
 import cv2
 
 def load_models():
-    FaceNet = load_model('facenet_keras.h5', compile=False)
+    FaceNet = load_model('models/facenet_keras.h5', compile=False)
 
-    SVM_model = joblib.load('SVM_model.pkl')
+    SVM_model = joblib.load('models/SVM_model.pkl')
 
-    name = joblib.load('label.pkl')
+    name = joblib.load('models/label.pkl')
 
     normalizer = Normalizer(norm = 'l2')
     detector = MTCNN()
