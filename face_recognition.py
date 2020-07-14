@@ -37,8 +37,8 @@ def get_predictions(raw_image):
     nparr = np.fromstring(raw_image.data, np.uint8)
     # decode image
     image_decoded = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
-    cv2.imwrite('saved.jpg', image_decoded)
-    image = Image.open('saved.jpg')
+    cv2.imwrite('output_image/saved.jpg', image_decoded)
+    image = Image.open('output_image/saved.jpg')
     #Convert the file to RGB
     image = image.convert('RGB')
     #Convert the File to Numpy array to be machine readable
