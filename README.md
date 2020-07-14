@@ -89,7 +89,7 @@ To test the code we need to do the following:
 
     1. Copy the photo to be tested in 'Test' subfolder of 'Data' folder. 
     Here I have used a photo of Elton John and Madonna
-![](data/test/singers.jpg)
+![](images/singers.jpg)
     
     2. Goto the 'Predict face in a group' folder.
     
