@@ -13,7 +13,7 @@ from PIL import Image , ImageDraw, ImageFont
 
 url = "http://localhost:5000/predict"
 headers = {"content-type": "image/jpg"}
-filename = 'images/hill.jpg'
+filename = 'images/singers.jpg'
 # encode image
 image = cv2.imread(filename)
 _, img_encoded = cv2.imencode(".jpg", image)
@@ -96,7 +96,7 @@ else:
         names = i.split('_')
         x1, y1, width, height ,percent  = 0,0,0,0, 0
         x1, y1, width, height , percent = predictions[i]
-        if names[0] == 'Unknown' or percent < 65 :
+        if names[0] == 'Unknown' or percent < 60 :
             continue
         else:
             x1, y1 = abs(x1) , abs(y1)
@@ -125,13 +125,13 @@ else:
                 color = (0,0,0) #Black
             thickness , font, text_add = font_size(width)
             image = cv2.rectangle(image, start_point, end_point, color, thickness) 
-    cv2.imwrite('recognised.jpg', image)
-    image = Image.open('recognised.jpg')
+    cv2.imwrite('output_image/recognised.jpg', image)
+    image = Image.open('output_image/recognised.jpg')
     for i in predictions.keys():
         names = i.split('_')
         x1, y1, width, height ,percent  = 0,0,0,0, 0
         x1, y1, width, height , percent = predictions[i]
-        if names[0] == 'Unknown' or percent < 65 :
+        if names[0] == 'Unknown' or percent < 60 :
             continue
         else:
             x1, y1 = abs(x1) , abs(y1)
