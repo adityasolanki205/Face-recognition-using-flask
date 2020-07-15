@@ -1,10 +1,10 @@
 # Facial Recognition
 
-This is a Facial Recognition application developed for **learning and implementation purpose only**. In this repository a model has been trained to detect and recognise faces of six individuals namely Aditya Solanki(Author), Ben Afflek, Madonna, Elton John, Jerry Seinfled, Mindy Kaling. The complete process is divided into 3 parts:
+This is a Facial Recognition application developed for **learning and implementation purpose only**. In this repository we will just implement this application using Flask Architecture to run it on Google Cloud. The complete process to Train and test is present [here](https://github.com/adityasolanki205/Face-Recognition)
+This model is trained to detect and recognise faces of six individuals namely Aditya Solanki(Author), Ben Affleck, Madonna, Elton John, Jerry Seinfled, Mindy Kaling. Here complete process is divided into 2 parts:
 
-1. **Face Detection in a Photograph**
-2. **Implementation of FaceNet model on the extracted face**
-3. **Implementation of Linear Support Vector Machine to recognise the face**
+1. **Setting up the Application on Google Cloud**
+2. **Implementation of model to recognise the faces**
 
 ![](expected.gif)
 
@@ -18,22 +18,23 @@ For the last one year, I have been part of a great learning curve wherein I have
 - [Keras](https://keras.io/)
 - [TensorFlow](https://www.tensorflow.org/)
 - [scikit-learn](https://scikit-learn.org/stable/)
+- [Flask](https://flask.palletsprojects.com/en/1.1.x/)
 
 
 ## Code Example
 
 ```bash
-    # clone this repo, removing the '-' to allow python imports:
-    git clone https://github.com/adityasolanki205/Face-Recognition.git
+    # clone this repo:
+    git clone https://github.com/adityasolanki205/Face-recognition-on-flask.git
 ```
 
 ## Installation
 
 Below are the steps to setup the enviroment and run the codes:
 
-1. **Data Setup**: First the data setup has to be done. Download the [5 celebrity Dataset, Kaggle](https://www.kaggle.com/dansbecker/5-celebrity-faces-dataset). After the Download create one more sub folder in train and test folders for your own photos. Provide as diverse photos as you can find. 
+1. **Cloud account Setup**: First we will have to setup free google cloud account which can be done [here](https://cloud.google.com/free). 
 
-2. **Face Detection**: Now we need to detect a face in the dataset. To do that we will use [Multi-Task Cascaded Convolutional Neural Network](https://arxiv.org/abs/1604.02878) (MTCNN). This process will provide the co-ordinates of pixels to identify the face in the photo. Same process can be done to fetch more than one face from a photo with multiple people. 
+2. **Creating a Google Compute instance**: Now we need to detect a face in the dataset. To do that we will use [Multi-Task Cascaded Convolutional Neural Network](https://arxiv.org/abs/1604.02878) (MTCNN). This process will provide the co-ordinates of pixels to identify the face in the photo. Same process can be done to fetch more than one face from a photo with multiple people. 
 
 ```python
     # All the codes are written in Jupyter Notebooks
