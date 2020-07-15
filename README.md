@@ -23,7 +23,7 @@ For the last one year, I have been part of a great learning curve wherein I have
 ## Code Example
 
 ```bash
-    # clone this repo, removing the '-' to allow python imports:
+    # clone this repo:
     git clone https://github.com/adityasolanki205/Face-Recognition.git
 ```
 
