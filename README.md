@@ -34,18 +34,30 @@ Below are the steps to setup the enviroment and run the codes:
 
 1. **Cloud account Setup**: First we will have to setup free google cloud account which can be done [here](https://cloud.google.com/free). 
 
-2. **Creating a Google Compute instance**: Now we have to create a Compute Engine Instance to deploy the app. To do that we will use n1-standard-8 as it has larger processing power. For Boot Disk we will select Ubuntu 18.04 LTS. Also in the Firewall section we will tick on the Allow Http traffic label to send/receive requests. At last we will create the instance. The created instance will look like
+2. **Creating a Google Compute instance**: Now we have to create a Compute Engine Instance to deploy the app. To do that we will use **n1-standard-8** as it has larger processing power. For Boot Disk we will select **Ubuntu 18.04 LTS**. Also tick on the Allow Http traffic label to send/receive requests create the instance.
 
 ![](images/compute_instance.gif)
 
-3. **Face Embeddings**: After face extraction we will fetch the face embedding using [FaceNet](https://github.com/davidsandberg/facenet). Downloaded the model [here](https://drive.google.com/drive/folders/1pwQ3H4aJ8a6yyJHZkTwtjcL4wYWQb7bn). After running this code for all the faces in train and test folders, we can save the embeddings using [np.saves_compressed](https://numpy.org/doc/stable/reference/generated/numpy.savez_compressed.html)
+3. **Deploying the App on Compute Engine**: After creating the instance, we will deploy the code on the instance using SSH. So click on the SSH button to session to deploy out code
 
-```python
-    # The Dimension of the input has to be increased as the model expects input in the form (Sample size, 160, 160,3)
-    samples = np.expand_dims(image_pixels, axis = 0)
+```bash
+    # update system packages and install the required packages
+    sudo apt-get update
+    sudo apt-get install bzip2 libxml2-dev libsm6 libxrender1 libfontconfig1
     
-    # Use the Predict method to find the Embeddings in the face. Output would be 1D vector of 128 embeddings of that face
-    embeddings = model.predict(samples)
+    # clone the project repo
+    git clone https://github.com/adityasolanki205/Face-recognition-on-flask.git
+    
+    # download and install miniconda
+    wget https://repo.anaconda.com/miniconda/Miniconda3-4.7.10-Linux-x86_64.sh
+    bash Miniconda3-4.7.10-Linux-x86_64.sh
+    
+    export PATH=/home/<your name here>/miniconda3/bin:$PATH
+    
+    rm Miniconda3-4.7.10-Linux-x86_64.sh
+    
+    # confirm installation
+    which conda
 ```
 
 4. **Training the SVM model on these Embeddings**:  Now we will train SVM model over the embeddings to predict the face of a person.
