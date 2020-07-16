@@ -38,7 +38,7 @@ Below are the steps to setup the enviroment and run the codes:
 
 ![](images/compute_instance.gif)
 
-3. **Deploying the App on Compute Engine**: After creating the instance, we will deploy the code on the instance using SSH. So click on the SSH button to session to deploy out code
+3. **Deploying the App on Compute Engine**: After creating the instance, we will deploy the code on the instance using SSH. So click on the SSH button to session to deploy out code.
 
 ```bash
     # update system packages and install the required packages
@@ -59,6 +59,7 @@ Below are the steps to setup the enviroment and run the codes:
     # confirm installation
     which conda
 ```
+![](images/SSH.png)
 
 4. **Training the SVM model on these Embeddings**:  Now we will train SVM model over the embeddings to predict the face of a person.
 
