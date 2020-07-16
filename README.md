@@ -32,13 +32,20 @@ For the last one year, I have been part of a great learning curve wherein I have
 
 Below are the steps to setup the enviroment and run the codes:
 
-1. **Cloud account Setup**: First we will have to setup free google cloud account which can be done [here](https://cloud.google.com/free). 
+1. **Cloud account Setup**: First we will have to setup free google cloud account which can be done [here](https://cloud.google.com/free). We will be using a Photo to Elton John and Madonna as input image
+
+![](images/singers.jpg)
 
 2. **Creating a Google Compute instance**: Now we have to create a Compute Engine Instance to deploy the app. To do that we will use **n1-standard-8** as it has larger processing power. For Boot Disk we will select **Ubuntu 18.04 LTS**. Also tick on the Allow Http traffic label to send/receive requests create the instance.
 
 ![](images/compute_instance.gif)
 
-3. **Deploying the App on Compute Engine**: After creating the instance, we will deploy the code on the instance using SSH. So click on the SSH button to session to deploy out code.
+3. **Create Firewall policy to allow Flask to access GCP**: For Local host to access google cloud we will have to
+create a firewall rule to let :5000 to access Compute instance. To do that go to VPC/Firewall tool on Console and create a new firewall rule 
+
+![](images/firewall.gif)
+
+4. **Deploying the App on Compute Engine**: After creating the instance, we will deploy the code on the instance using SSH. So click on the SSH button to session to deploy out code.
 
 ```bash
     # update system packages and install the required packages
@@ -61,7 +68,7 @@ Below are the steps to setup the enviroment and run the codes:
 ```
 ![](images/startup.jpg)
 
-4. **Running the App**:  Now we will run the app on the Instance
+5. **Running the App**:  Now we will run the app on the Instance
 
 ```bash
     # Installing all the dependencies
@@ -72,7 +79,7 @@ Below are the steps to setup the enviroment and run the codes:
 ```
 ![](images/application.jpg)
 
-5. **Creating a POST request from Local**: After this we will create a POST request from the local. To do that we will just run request.py from local. Only one thing has to be changed in the request.py file i.e. the IP address of the instance. Copy the external IP of the instance from Google cloud Console and paste in the request.py file
+6. **Creating a POST request from Local**: After this we will create a POST request from the local. To do that we will just run request.py from local. Only one thing has to be changed in the request.py file i.e. the IP address of the instance. Copy the external IP of the instance from Google cloud Console and paste in the request.py file
 
 ```python
     import requests
@@ -88,44 +95,14 @@ Below are the steps to setup the enviroment and run the codes:
 ```
 ![](images/request.jpg)
 
-6. **See magic happen**: Run Request.py file and see Face recognition happening on Google Cloud. This will save a Final.jpg file containing the faces.
+6. **See magic happen**: Run Request.py file and see Face recognition happening on Google Cloud. This will save a Final.jpg file as an output image.
 
 ![](final.jpg)
-
-## Tests
-To test the code we need to do the following:
-
-    1. Copy the photo to be tested in 'Test' subfolder of 'Data' folder. 
-    Here I have used a photo of Elton John and Madonna
-![](images/singers.jpg)
     
-    2. Goto the 'Predict face in a group' folder.
-    
-    3. Open the 'Predict from a group of faces.ipynb'
-    
-    4. Goto filename variable and provide the path to your photo. Atlast run the complete code. 
-    The recognised faces would have been highlighted and a photo would be saved by the name 'Highlighted.jpg'
-![](final.jpg)
-    
-## How to use?
-To run the complete code, follow the process below:
-
-    1. Create Data Folder. 
-    
-    2. Create Sub folders as Training and Validation Dataset
-    
-    3. Create all the celebrity folders with all the required photos in them. 
-    
-    4. Run the Train and Test Data.ipynb file under Training Data Creation folder
-    
-    5. Save the output as numpy arrays
-    
-    6. Run the Face embedding using FaceNet.ipynb under the same folder name. This will create training data for SVM model
-    
-    7. Run the Predict from a group of faces.ipynb to recognise a familiar face
 
 ## Credits
 1. David Sandberg's facenet repo: [https://github.com/davidsandberg/facenet](https://github.com/davidsandberg/facenet)
 2. Tim Esler's Git repo:[https://github.com/timesler/facenet-pytorch](https://github.com/timesler/facenet-pytorch)
 3. Akash Nimare's README.md: https://gist.github.com/akashnimare/7b065c12d9750578de8e705fb4771d2f#file-readme-md
 4. [Machine learning mastery](https://machinelearningmastery.com/how-to-develop-a-face-recognition-system-using-facenet-in-keras-and-an-svm-classifier/)
+5. [Deploying ML Model](https://towardsdatascience.com/deploying-a-custom-ml-prediction-service-on-google-cloud-ae3be7e6d38f)
