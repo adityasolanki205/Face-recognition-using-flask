@@ -36,7 +36,7 @@ Below are the steps to setup the enviroment and run the codes:
 
 2. **Creating a Google Compute instance**: Now we have to create a Compute Engine Instance to deploy the app. To do that we will use n1-standard-8 as it has larger processing power. For Boot Disk we will select Ubuntu 18.04 LTS. Also in the Firewall section we will tick on the Allow Http traffic label to send/receive requests. At last we will create the instance. The created instance will look like
 
-
+![](images/compute_instance.gif)
 
 3. **Face Embeddings**: After face extraction we will fetch the face embedding using [FaceNet](https://github.com/davidsandberg/facenet). Downloaded the model [here](https://drive.google.com/drive/folders/1pwQ3H4aJ8a6yyJHZkTwtjcL4wYWQb7bn). After running this code for all the faces in train and test folders, we can save the embeddings using [np.saves_compressed](https://numpy.org/doc/stable/reference/generated/numpy.savez_compressed.html)
 
