@@ -32,7 +32,7 @@ For the last one year, I have been part of a great learning curve wherein I have
 
 Below are the steps to setup the enviroment and run the codes:
 
-1. **Cloud account Setup**: First we will have to setup free google cloud account which can be done [here](https://cloud.google.com/free). We will be using a Photo to Elton John and Madonna as input image
+1. **Cloud account Setup**: First we will have to setup free google cloud account which can be done [here](https://cloud.google.com/free). We will be using a Photo to Elton John and Madonna as an input image
 
 ![](images/singers.jpg)
 
@@ -41,7 +41,7 @@ Below are the steps to setup the enviroment and run the codes:
 ![](images/compute_instance.gif)
 
 3. **Create Firewall policy to allow Flask to access GCP**: For Local host to access google cloud we will have to
-create a firewall rule to let :5000 to access Compute instance. To do that go to VPC/Firewall tool on Console and create a new firewall rule 
+create a firewall rule to let port 5000 to access Compute instance. To do that go to VPC/Firewall tool on google Console and create a new firewall rule.
 
 ![](images/firewall.gif)
 
@@ -95,10 +95,18 @@ create a firewall rule to let :5000 to access Compute instance. To do that go to
 ```
 ![](images/request.jpg)
 
-6. **See magic happen**: Run Request.py file and see Face recognition happening on Google Cloud. This will save a Final.jpg file as an output image.
+6. **See magic happen**: Run Request.py file and see Face recognition happening on Google Cloud. This will save a final.jpg file as an output image where all know faces will be boxed.
 
 ![](final.jpg)
     
+**Note**: The boundary boxes are color coded:
+
+    1. Aditya Solanki  : Yellow
+    2. Ben Affleck     : Blue   
+    3. Elton John      : Green
+    4. Jerry Seinfield : Red
+    5. Madonna         : Aqua
+    6. Mindy Kaling    : White
 
 ## Credits
 1. David Sandberg's facenet repo: [https://github.com/davidsandberg/facenet](https://github.com/davidsandberg/facenet)
