@@ -70,7 +70,7 @@ Below are the steps to setup the enviroment and run the codes:
     # Running the app 
     python app.py
 ```
-![](images/app.jpg)
+![](images/application.jpg)
 
 5. **Creating a POST request from Local**: After this we will create a POST request from the local. To do that we will just run request.py from local. Only one thing has to be changed in the request.py file i.e. the IP address of the instance. Copy the external IP of the instance from Google cloud Console and paste in the request.py file
 
