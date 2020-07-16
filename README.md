@@ -61,28 +61,36 @@ Below are the steps to setup the enviroment and run the codes:
 ```
 ![](images/SSH.jpg)
 
-4. **Training the SVM model on these Embeddings**:  Now we will train SVM model over the embeddings to predict the face of a person.
+4. **Running the App**:  Now we will run the app on the Instance
+
+```bash
+    # Installing all the dependencies
+    pip install -r requirements.txt
+    
+    # Running the app 
+    python app.py
+```
+![](images/app.jpg)
+
+5. **Creating a POST request from Local**: After this we will create a POST request from the local. To do that we will just run request.py from local. Only one thing has to be changed in the request.py file i.e. the IP address of the instance. Copy the external IP of the instance from Google cloud Console and paste in the request.py file
 
 ```python
-    # We will use Linear SVM model to train over the embeddings
-    model = SVC(kernel = 'linear', probability=True).fit(X_train,y_train)
-```
+    import requests
+    import json
+    import cv2
+    import PIL
+    from PIL import Image , ImageDraw, ImageFont
 
-5. **Predict the Face**: After the training of SVM model we will predict the face over test dataset.
 
-```python
-    # Preprocessing of the test photos have to be done like we did for Train and Validation photos
-    image = np.asarray(image.convert('RGB'))
-    
-    # Now extract the face
-    faces = MTCNN.detect_faces(image)
-    
-    # Extract embeddings
-    embeddings = model.predict(samples)
-    
-    # At last we will predict the face embeddings
-    SVM_model.predict(X_test)
+    url = "http://<Your IP address>:5000/predict"
+    headers = {"content-type": "image/jpg"}
+    filename = 'images/singers.jpg'
 ```
+![](images/request.jpg)
+
+6. **See magic happen**: Run Request.py file and see Face recognition happening on Google Cloud. This will save a Final.jpg file containing the faces.
+
+![](final.jpg)
 
 ## Tests
 To test the code we need to do the following:
