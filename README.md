@@ -28,7 +28,7 @@ For the last one year, I have been part of a great learning curve wherein I have
     git clone https://github.com/adityasolanki205/Face-recognition-on-flask.git
 ```
 
-## Installation
+## How to use?
 
 Below are the steps to setup the enviroment and run the codes:
 
@@ -59,7 +59,7 @@ Below are the steps to setup the enviroment and run the codes:
     # confirm installation
     which conda
 ```
-![](images/SSH.jpg)
+![](images/startup.jpg)
 
 4. **Running the App**:  Now we will run the app on the Instance
 
@@ -106,15 +106,6 @@ To test the code we need to do the following:
     4. Goto filename variable and provide the path to your photo. Atlast run the complete code. 
     The recognised faces would have been highlighted and a photo would be saved by the name 'Highlighted.jpg'
 ![](final.jpg)
-
-**Note**: The boundary boxes are color coded:
-
-    1. Aditya Solanki  : Yellow
-    2. Ben Affleck      : Blue   
-    3. Elton John      : Green
-    4. Jerry Seinfield : Red
-    5. Madonna         : Aqua
-    6. Mindy Kaling    : White
     
 ## How to use?
 To run the complete code, follow the process below:
