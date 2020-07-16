@@ -59,7 +59,7 @@ Below are the steps to setup the enviroment and run the codes:
     # confirm installation
     which conda
 ```
-![](images/SSH.png)
+![](images/SSH.jpg)
 
 4. **Training the SVM model on these Embeddings**:  Now we will train SVM model over the embeddings to predict the face of a person.
 
