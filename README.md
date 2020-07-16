@@ -34,23 +34,9 @@ Below are the steps to setup the enviroment and run the codes:
 
 1. **Cloud account Setup**: First we will have to setup free google cloud account which can be done [here](https://cloud.google.com/free). 
 
-2. **Creating a Google Compute instance**: Now we need to detect a face in the dataset. To do that we will use [Multi-Task Cascaded Convolutional Neural Network](https://arxiv.org/abs/1604.02878) (MTCNN). This process will provide the co-ordinates of pixels to identify the face in the photo. Same process can be done to fetch more than one face from a photo with multiple people. 
+2. **Creating a Google Compute instance**: Now we have to create a Compute Engine Instance to deploy the app. To do that we will use n1-standard-8 as it has larger processing power. For Boot Disk we will select Ubuntu 18.04 LTS. Also in the Firewall section we will tick on the Allow Http traffic label to send/receive requests. At last we will create the instance. The created instance will look like
 
-```python
-    # All the codes are written in Jupyter Notebooks
 
-    # Install MTCNN
-    !pip install mtcnn
-    
-    # To Preprocess the image install PIL 
-    !pip install PIL
-    
-    # Preprocess the image into 'RGB' and convert it into numpy array
-    image = np.asarray(image.convert('RGB'))
-    
-    # Use MTCNN object to detect faces using detect_faces() method
-    faces = MTCNN.detect_faces(image)
-```
 
 3. **Face Embeddings**: After face extraction we will fetch the face embedding using [FaceNet](https://github.com/davidsandberg/facenet). Downloaded the model [here](https://drive.google.com/drive/folders/1pwQ3H4aJ8a6yyJHZkTwtjcL4wYWQb7bn). After running this code for all the faces in train and test folders, we can save the embeddings using [np.saves_compressed](https://numpy.org/doc/stable/reference/generated/numpy.savez_compressed.html)
 
