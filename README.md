@@ -36,12 +36,12 @@ Below are the steps to setup the enviroment and run the codes:
 
 ![](images/singers.jpg)
 
-2. **Creating a Google Compute instance**: Now we have to create a Compute Engine Instance to deploy the app. To do that we will use **n1-standard-8** as it has larger processing power. For Boot Disk we will select **Ubuntu 18.04 LTS**. Also tick on the Allow Http traffic label to send/receive requests. As last create the instance.
+2. **Creating a Google Compute instance**: Now we have to create a Compute Engine Instance to deploy the app. To do that we will use **n1-standard-8** as it has larger processing power. For Boot Disk we will select **Ubuntu 18.04 LTS**. Also tick on the Allow Http traffic label to send/receive requests. At last create the instance.
 
 ![](images/compute_instance.gif)
 
 3. **Create Firewall policy to allow Flask to access GCP**: For Local host to access google cloud we will have to
-create a firewall rule to let port 5000 to access Compute instance. To do that go to VPC/Firewall tool on google Console and create a new firewall rule.
+create a firewall rule to let port 5000 access Compute instance. To do that go to VPC/Firewall tool on google Console and create a new firewall rule.
 
 ![](images/firewall.gif)
 
