@@ -45,7 +45,7 @@ create a firewall rule to let port 5000 access Compute instance. To do that go t
 
 ![](images/firewall.gif)
 
-4. **Deploying the App on Compute Engine**: After creating the instance, we will deploy the code on the instance using SSH. So click on the SSH button to session to deploy out code.
+4. **Deploying the App on Compute Engine**: After creating the instance, we will deploy the code on the instance using SSH. So click on the SSH button to create a session to deploy our code.
 
 ```bash
     # update system packages and install the required packages
@@ -68,7 +68,7 @@ create a firewall rule to let port 5000 access Compute instance. To do that go t
 ```
 ![](images/startup.jpg)
 
-5. **Running the App**:  Now we will run the app on the Instance
+5. **Running the App**:  Now we will run the app on the instance
 
 ```bash
     # Installing all the dependencies
@@ -79,7 +79,7 @@ create a firewall rule to let port 5000 access Compute instance. To do that go t
 ```
 ![](images/application.jpg)
 
-6. **Creating a POST request from Local**: After this we will create a POST request from the local. To do that we will just run request.py from local. Only one thing has to be changed in the request.py file i.e. the IP address of the instance. Copy the external IP of the instance from Google cloud Console and paste in the request.py file
+6. **Creating a POST request from Local**: After this we will create a POST request from the local. To do that we will just run request.py from local. There is one thing that has to be changed in the request.py file i.e. the IP address of the instance. Copy the external IP of the instance from Google cloud Console and paste in the request.py file
 
 ```python
     import requests
@@ -95,7 +95,7 @@ create a firewall rule to let port 5000 access Compute instance. To do that go t
 ```
 ![](images/request.jpg)
 
-6. **See magic happen**: Run Request.py file and see Face recognition happening on Google Cloud. This will save a final.jpg file as an output image where all know faces will be boxed.
+6. **See the magic happen**: Run Request.py file and see Face recognition happening on Google Cloud. This will save a final.jpg file as an output image where all know faces will be boxed.
 
 ![](final.jpg)
     
@@ -109,8 +109,8 @@ create a firewall rule to let port 5000 access Compute instance. To do that go t
     6. Mindy Kaling    : White
 
 ## Credits
-1. David Sandberg's facenet repo: [https://github.com/davidsandberg/facenet](https://github.com/davidsandberg/facenet)
-2. Tim Esler's Git repo:[https://github.com/timesler/facenet-pytorch](https://github.com/timesler/facenet-pytorch)
-3. Akash Nimare's README.md: https://gist.github.com/akashnimare/7b065c12d9750578de8e705fb4771d2f#file-readme-md
-4. [Machine learning mastery](https://machinelearningmastery.com/how-to-develop-a-face-recognition-system-using-facenet-in-keras-and-an-svm-classifier/)
-5. [Deploying ML Model](https://towardsdatascience.com/deploying-a-custom-ml-prediction-service-on-google-cloud-ae3be7e6d38f)
+1. Special thanks to [Deploying ML Model](https://towardsdatascience.com/deploying-a-custom-ml-prediction-service-on-google-cloud-ae3be7e6d38f)
+2. David Sandberg's facenet repo: [https://github.com/davidsandberg/facenet](https://github.com/davidsandberg/facenet)
+3. Tim Esler's Git repo:[https://github.com/timesler/facenet-pytorch](https://github.com/timesler/facenet-pytorch)
+4. Akash Nimare's README.md: https://gist.github.com/akashnimare/7b065c12d9750578de8e705fb4771d2f#file-readme-md
+5. [Machine learning mastery](https://machinelearningmastery.com/how-to-develop-a-face-recognition-system-using-facenet-in-keras-and-an-svm-classifier/)
