@@ -98,7 +98,7 @@ create a firewall rule to let port 5000 access Compute instance. To do that go t
 ```
 ![](images/request.jpg)
 
-6. **See the magic happen**: Run Request.py file and see Face recognition happening on Google Cloud. This will save a final.jpg file as an output image where all know faces will be boxed.
+7. **See the magic happen**: Run Request.py file and see Face recognition happening on Google Cloud. This will save a final.jpg file as an output image where all know faces will be boxed.
 
 ![](final.jpg)
     
