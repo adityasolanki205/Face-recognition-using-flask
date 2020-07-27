@@ -71,6 +71,9 @@ create a firewall rule to let port 5000 access Compute instance. To do that go t
 5. **Running the App**:  Now we will run the app on the instance
 
 ```bash
+    # Goto the Flask Folder
+    cd Face-recognition-on-flask
+    
     # Installing all the dependencies
     pip install -r requirements.txt
     
