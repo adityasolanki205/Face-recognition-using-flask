@@ -24,7 +24,7 @@ For the last one year, I have been part of a great learning curve wherein I have
 
 ```bash
     # clone this repo:
-    git clone https://github.com/adityasolanki205/Face-recognition-on-flask.git
+    git clone https://github.com/adityasolanki205/Face-recognition-using-Google-Compute-Engine.git
 ```
 
 ## How to use?
@@ -52,7 +52,7 @@ create a firewall rule to let port 5000 access Compute instance. To do that go t
     sudo apt-get install bzip2 libxml2-dev libsm6 libxrender1 libfontconfig1
     
     # clone the project repo
-    git clone https://github.com/adityasolanki205/Face-recognition-on-flask.git
+    git clone https://github.com/adityasolanki205/Face-recognition-using-Google-Compute-Engine.git
     
     # download and install miniconda
     wget https://repo.anaconda.com/miniconda/Miniconda3-4.7.10-Linux-x86_64.sh
